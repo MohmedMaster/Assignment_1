@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Assignment1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLV-1Z-Ax0" userLabel="txtNumber">
+                                <rect key="frame" x="0.0" y="94.5" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Users: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MjC-5c-6gY">
+                                <rect key="frame" x="0.0" y="59" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IIi-A9-Yt8">
+                                <rect key="frame" x="0.0" y="615" width="414" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="TappedSaveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ufm-eC-DRu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvN-1q-ADS">
+                                <rect key="frame" x="0.0" y="660" width="414" height="30"/>
+                                <state key="normal" title="Retrieve"/>
+                                <connections>
+                                    <action selector="TappedRetrieveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gms-lu-tgZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlI-ox-oBD">
+                                <rect key="frame" x="0.0" y="741" width="414" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="TappedDeleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DrB-hb-tbo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="No Text Currently Saved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-T8-gsd">
+                                <rect key="frame" x="0.0" y="705" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y8G-8H-JIt">
+                                <rect key="frame" x="0.0" y="552" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IIi-A9-Yt8" firstAttribute="top" secondItem="Y8G-8H-JIt" secondAttribute="bottom" constant="15" id="0e2-JN-eMB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KvN-1q-ADS" secondAttribute="trailing" id="0tX-7s-ouC"/>
+                            <constraint firstItem="JlI-ox-oBD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1jH-bp-Uzb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JlI-ox-oBD" secondAttribute="bottom" constant="15" id="8Zx-nE-42D"/>
+                            <constraint firstItem="MjC-5c-6gY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8z6-1m-dwL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N7n-T8-gsd" secondAttribute="trailing" id="9ak-wY-0nE"/>
+                            <constraint firstItem="IIi-A9-Yt8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cwy-z8-Xz2"/>
+                            <constraint firstItem="Y8G-8H-JIt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DZ4-Zj-yqB"/>
+                            <constraint firstItem="MjC-5c-6gY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gps-dl-pxy"/>
+                            <constraint firstItem="MjC-5c-6gY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="HHj-OT-sAM"/>
+                            <constraint firstItem="Y8G-8H-JIt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HIk-lo-shd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IIi-A9-Yt8" secondAttribute="trailing" id="Is0-b2-yl5"/>
+                            <constraint firstItem="N7n-T8-gsd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JpI-wy-4Pg"/>
+                            <constraint firstItem="cLV-1Z-Ax0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PNT-cL-DvK"/>
+                            <constraint firstItem="cLV-1Z-Ax0" firstAttribute="top" secondItem="MjC-5c-6gY" secondAttribute="bottom" constant="15" id="QKG-uZ-Gue"/>
+                            <constraint firstItem="KvN-1q-ADS" firstAttribute="top" secondItem="IIi-A9-Yt8" secondAttribute="bottom" constant="15" id="RGL-AG-D3T"/>
+                            <constraint firstItem="JlI-ox-oBD" firstAttribute="top" secondItem="N7n-T8-gsd" secondAttribute="bottom" constant="15" id="RNo-Iq-Cvs"/>
+                            <constraint firstItem="IIi-A9-Yt8" firstAttribute="top" secondItem="Y8G-8H-JIt" secondAttribute="bottom" constant="15" id="Ttf-Se-Bd0"/>
+                            <constraint firstItem="JlI-ox-oBD" firstAttribute="top" secondItem="N7n-T8-gsd" secondAttribute="bottom" constant="15" id="VXu-0b-7Xt"/>
+                            <constraint firstItem="IIi-A9-Yt8" firstAttribute="top" secondItem="Y8G-8H-JIt" secondAttribute="bottom" constant="15" id="W1c-Jf-MYf"/>
+                            <constraint firstItem="Y8G-8H-JIt" firstAttribute="top" secondItem="cLV-1Z-Ax0" secondAttribute="bottom" constant="15" id="X5T-6y-pxd"/>
+                            <constraint firstItem="MjC-5c-6gY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y9g-ap-enz"/>
+                            <constraint firstItem="KvN-1q-ADS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YqK-xm-ieO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JlI-ox-oBD" secondAttribute="bottom" constant="15" id="Z1L-JL-lwb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y8G-8H-JIt" secondAttribute="trailing" id="b5q-uy-U0s"/>
+                            <constraint firstItem="IIi-A9-Yt8" firstAttribute="top" secondItem="Y8G-8H-JIt" secondAttribute="bottom" constant="15" id="bHG-F3-ONL"/>
+                            <constraint firstItem="IIi-A9-Yt8" firstAttribute="top" secondItem="Y8G-8H-JIt" secondAttribute="bottom" constant="15" id="bhB-Rb-A5y"/>
+                            <constraint firstItem="cLV-1Z-Ax0" firstAttribute="top" secondItem="MjC-5c-6gY" secondAttribute="bottom" constant="15" id="eDc-fe-93g"/>
+                            <constraint firstItem="cLV-1Z-Ax0" firstAttribute="top" secondItem="MjC-5c-6gY" secondAttribute="bottom" constant="20" id="gfm-HY-w3Y"/>
+                            <constraint firstItem="JlI-ox-oBD" firstAttribute="top" secondItem="N7n-T8-gsd" secondAttribute="bottom" constant="15" id="gfq-zk-w99"/>
+                            <constraint firstItem="JlI-ox-oBD" firstAttribute="top" secondItem="N7n-T8-gsd" secondAttribute="bottom" constant="15" id="jNM-d0-6VL"/>
+                            <constraint firstItem="N7n-T8-gsd" firstAttribute="top" secondItem="KvN-1q-ADS" secondAttribute="bottom" constant="15" id="jd9-jS-Nu1"/>
+                            <constraint firstItem="N7n-T8-gsd" firstAttribute="top" secondItem="KvN-1q-ADS" secondAttribute="bottom" constant="15" id="kbA-fQ-MOm"/>
+                            <constraint firstItem="KvN-1q-ADS" firstAttribute="top" secondItem="IIi-A9-Yt8" secondAttribute="bottom" constant="15" id="llw-l2-dLA"/>
+                            <constraint firstItem="Y8G-8H-JIt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p6Z-EC-BWM"/>
+                            <constraint firstItem="KvN-1q-ADS" firstAttribute="top" secondItem="IIi-A9-Yt8" secondAttribute="bottom" constant="15" id="pVS-yk-jIn"/>
+                            <constraint firstItem="N7n-T8-gsd" firstAttribute="top" secondItem="KvN-1q-ADS" secondAttribute="bottom" constant="15" id="qNr-QQ-sSp"/>
+                            <constraint firstAttribute="trailing" secondItem="cLV-1Z-Ax0" secondAttribute="trailing" id="qyo-Tu-Ter"/>
+                            <constraint firstItem="MjC-5c-6gY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uWM-rE-xhS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JlI-ox-oBD" secondAttribute="trailing" id="wBH-fw-c9f"/>
+                            <constraint firstItem="MjC-5c-6gY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="xDl-cv-rAT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblText" destination="N7n-T8-gsd" id="wKC-0u-8g2"/>
+                        <outlet property="txtField" destination="Y8G-8H-JIt" id="QuK-jj-sT7"/>
+                        <outlet property="txtNumber" destination="cLV-1Z-Ax0" id="R3U-fF-ght"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
