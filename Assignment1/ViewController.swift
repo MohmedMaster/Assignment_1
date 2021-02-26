@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func TappedSaveButton(_ sender: Any) {
+    @IBAction func SaveButtonPressed(_ sender: Any) {
         //Calling entity
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func TappedRetrieveButton(_ sender: Any) {
+    @IBAction func RetrieveButtonPressed(_ sender: Any) {
         //Retrieve Data from coreData
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
@@ -72,9 +72,16 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func TappedDeleteButton(_ sender: Any) {
+    @IBAction func DeleteButtonPressed(_ sender: Any) {
         //Retrieve Data from coreData
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
+   
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+   
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: nil ))
+   
+        self.present(alert, animated: true)
+        /*let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
         request.returnsObjectsAsFaults = false
         
@@ -96,6 +103,6 @@ class ViewController: UIViewController {
             txtNumber.text = number.description
         } catch {
             print ("Failed To Read")
-        }
+        }*/
     }
 }
