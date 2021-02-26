@@ -76,9 +76,8 @@
                         <color key="backgroundColor" red="0.34901960784313724" green="0.35686274509803922" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="lblText" destination="N7n-T8-gsd" id="wKC-0u-8g2"/>
-                        <outlet property="txtField" destination="Y8G-8H-JIt" id="QuK-jj-sT7"/>
-                        <outlet property="txtNumber" destination="cLV-1Z-Ax0" id="R3U-fF-ght"/>
+                        <outlet property="InputTextField" destination="Y8G-8H-JIt" id="G7q-cB-aKM"/>
+                        <outlet property="NumberTextField" destination="cLV-1Z-Ax0" id="igU-tI-uSF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

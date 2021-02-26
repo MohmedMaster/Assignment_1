@@ -13,34 +13,29 @@ class ViewController: UIViewController {
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
 
-      @IBOutlet weak var lblText: UILabel!
-      @IBOutlet weak var txtField: UITextField!
-      @IBOutlet weak var txtNumber: UITextField!
+      @IBOutlet private weak var DisplayNameLabel: UILabel!
+      @IBOutlet private weak var InputTextField: UITextField!
+      @IBOutlet private weak var NumberTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func SaveButtonPressed(_ sender: Any) {
+    @IBAction func SaveButtonTapped(_ sender: Any) {
         //Calling entity
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
         
         //Add Data
-        newUser.setValue("\(self.txtField.text ?? "")", forKey: "name")
+        newUser.setValue("\(self.InputTextField.text ?? "")", forKey: "name")
         
         //Save data
         do {
             try context.save()
-            txtField.text = ""
+            InputTextField.text = ""
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
             
             do{
                 let result = try context.fetch(request)
-                txtNumber.text = result.count.description
+                NumberTextField.text = result.count.description
             }catch {
             }
             
@@ -49,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func RetrieveButtonPressed(_ sender: Any) {
+    @IBAction func RetrieveButtonTapped(_ sender: Any) {
         //Retrieve Data from coreData
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
@@ -64,7 +59,7 @@ class ViewController: UIViewController {
                 else {
                     return
                 }
-                self.lblText.text = name
+                self.DisplayNameLabel.text = name
             }
             
         } catch {
@@ -72,7 +67,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func DeleteButtonPressed(_ sender: Any) {
+    @IBAction func DeleteButtonTapped(_ sender: Any) {
         //Retrieve Data from coreData
         let alert = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: .alert)
    
