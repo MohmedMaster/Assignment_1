@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
         
         //Add Data
-        newUser.setValue("\(self.InputTextField.text ?? "")", forKey: "name")
+        newUser.setValue("\(InputTextField.text ?? "")", forKey: "name")
         
         //Save data
         do {
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                 else {
                     return
                 }
-                self.DisplayNameLabel.text = name
+            DisplayNameLabel.text = name
             }
             
         } catch {
