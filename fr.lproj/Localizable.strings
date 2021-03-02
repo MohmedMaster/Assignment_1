@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Assignment1
+
+  Created by Mohmed Master on 2021/03/01.
+  
+*/
+
+let LABEL_QUESTION_TEXT = "Are you sure?"
+let CANCEL_BUTTON_TEXT = "Cancel"
+let CONFIRM_BUTTON TEXT = "Confirm"

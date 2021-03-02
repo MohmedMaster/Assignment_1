@@ -13,34 +13,29 @@ class ViewController: UIViewController {
     static let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = appDelegate.persistentContainer.viewContext
 
-      @IBOutlet weak var lblText: UILabel!
-      @IBOutlet weak var txtField: UITextField!
-      @IBOutlet weak var txtNumber: UITextField!
+      @IBOutlet private weak var displayNameLabel: UILabel!
+      @IBOutlet private weak var inputTextField: UITextField!
+      @IBOutlet private weak var numberTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func TappedSaveButton(_ sender: Any) {
+    @IBAction func saveButtonTapped(_ sender: Any) {
         //Calling entity
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
         
         //Add Data
-        newUser.setValue("\(self.txtField.text ?? "")", forKey: "name")
+        newUser.setValue("\(inputTextField.text ?? "")", forKey: "name")
         
         //Save data
         do {
             try context.save()
-            txtField.text = ""
+            inputTextField.text = ""
             
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
             
             do{
                 let result = try context.fetch(request)
-                txtNumber.text = result.count.description
+                numberTextField.text = result.count.description
             }catch {
             }
             
@@ -49,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func TappedRetrieveButton(_ sender: Any) {
+    @IBAction func retrieveButtonTapped(_ sender: Any) {
         //Retrieve Data from coreData
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
@@ -64,7 +59,7 @@ class ViewController: UIViewController {
                 else {
                     return
                 }
-                self.lblText.text = name
+                displayNameLabel.text = name
             }
             
         } catch {
@@ -72,9 +67,15 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func TappedDeleteButton(_ sender: Any) {
-        //Retrieve Data from coreData
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        let alert = UIAlertController( title: NSLocalizedString("LABEL_QUESTION_TEXT", comment: "Question"), message: nil, preferredStyle: .alert)
+   
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL_BUTTON_TEXT", comment: "NO"), style: .cancel, handler: nil))
+   
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CONFIRM_BUTTON_TEXT", comment: "YES"), style: .default, handler: nil ))
+   
+        present(alert, animated: true)
+        /*let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         
         request.returnsObjectsAsFaults = false
         
@@ -85,17 +86,17 @@ class ViewController: UIViewController {
             
             for data in result as! [NSManagedObject] {
                 print(data.value(forKey: "name") as! String)
-                self.context.delete(data)
+                context.delete(data)
                 lblText.text = ""
                 number = result.count - 1
 //                guard  let name = data.value(forKey: "name") as? String
                 do {
-                    try self.context.save()
+                    try context.save()
                 } catch {}
             }
-            txtNumber.text = number.description
+            numberTextField.text = number.description
         } catch {
             print ("Failed To Read")
-        }
+        }*/
     }
 }
